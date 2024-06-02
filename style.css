@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url(https://kinder.wdr.de/tv/neuneinhalb/img-grafik-rubrik110~_v-ARDFotogalerie.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  header {
+    width: 100%;
+    background-color: rgba(110, 158, 216, 0.771);
+    padding: 10px 0;
+    text-align: center;
+    text-shadow: 0 0 10px white;
+  }
+  
+  aside {
+    width: 50px;
+    background-color: green;
+    height: calc(100vh - 50px); /* Höhe abzüglich der Header-Höhe */
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+  
+  #mainContent {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 70px; /* Platz für die Sidebar */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  #categorySelection, #quiz, #result {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+  }
+ 
+  
+  #questionContainer {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow:  0 0 5px rgb(74, 159, 244);
+  }
+  
+  #answersContainer {
+    display: flex;
+    flex-direction: column; /* Anordnung der Antworten in einer Spalte */
+    align-items: center;
+  }
+  
+  #answersContainer button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .progress-bar-container {
+    width: 80%;
+    margin: 20px 0;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: lightgray;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .progress-bar.correct {
+    background-color: green;
+    width: 0;
+    transition: width 0.5s;
+  }
+  
+  .progress-bar.incorrect {
+    background-color: red;
+    width: 0;
+    transition: width 0.5s;
+  }
+  
+  #result {
+    margin-top: 20px;
+  }
+  
+  h1 {
+    margin-top: 0;
+  }
+  
+  #img {
+    margin-top: 0;
+  }
+  
+  #nav {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+  
+  #allgemeineFragen, #mathe, #it, #ge, #extern {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 5px 0;
+    font-weight: bold;
+    font-size: large;
+
+  }
+  footer {
+    width: 100%;
+    background-color: rgba(69, 156, 228, 0.771);
+    padding: 20px 0 ;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+  }
+  
+/* Media Queries */
+@media screen and (max-width: 600px) {
+    header {
+      font-size: 2rem;
+    }
+  
+    .sidebar {
+      width: 100%;
+    }
+  
+    main {
+      padding: 10px;
+    }
+  
+    #category-buttons {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .sidebar ul li {
+      padding: 10px 15px;
+      font-size: 1rem;
+    }
+  
+    #startbtn, #nextbtn, #resetButton {
+      transform: none;
+      width: 100%;
+    }
+  
+    .qusetions, .results {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  @media all and (max-width: 40em) {
+    main {
+      flex-direction: column;
+    }
+  }
+  
+  main > * {
+    order: 0;
+  }
